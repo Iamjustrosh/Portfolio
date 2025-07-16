@@ -36,6 +36,6 @@ A clean, modern, and responsive personal portfolio website built using **React**
 
 📬 Contact
 Roshan Jain
-📧 your.email@example.com
-🔗 LinkedIn • Instagram
+📧 roshanjain7422@gmail.com 
+🔗 [LinkedIn]() • [Instagram]()
 
