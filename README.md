@@ -1,12 +1,41 @@
-# React + Vite
+# 🚀 Roshan Jain – Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A clean, modern, and responsive personal portfolio website built using **React**, **Vite**, and **Tailwind CSS**. Designed to showcase skills, projects, and contact information with a unique animated hero section, custom components, and future scalability in mind.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎨 **Animated Hero Section** with avatar, particles, and floating skill icons  
+- 🧠 **Skills Showcase** via dynamic horizontal marquee and cards  
+- 🛠️ **Projects Section** powered by reusable `ProjectCard` components  
+- 📬 **Functional Contact Form** (EmailJS integration)  
+- ⚡ **Responsive Design** across all screen sizes  
+- 🌀 Smooth transitions and component-level animations planned  
+- 📁 Clean component structure for easy updates  
+
+---
+
+## 🧱 Tech Stack
+
+| Tech             | Description                                     |
+|------------------|-------------------------------------------------|
+| **React + Vite** | Lightning-fast React development setup          |
+| **Tailwind CSS** | Utility-first CSS framework                     |
+| **shadcn/ui**    | Accessible and beautiful component library      |
+| **EmailJS**      | Contact form submission via email               |
+| **Remix Icon**   | Icon library used across the project            |
+| **WebP**         | Optimized images for faster load times          |
+
+---
+
+
+🔗 Live Demo
+🌍 [Visit Portfolio] ()
+
+📬 Contact
+Roshan Jain
+📧 your.email@example.com
+🔗 LinkedIn • Instagram
+
