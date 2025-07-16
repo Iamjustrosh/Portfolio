@@ -10,7 +10,7 @@ export const SKILLS = [
     { name: "Tailwind", logo: "../assets/skills/Tailwind Css.svg", color: "#5DE5E9" },
     { name: "Git", logo: "../assets/skills/Git.svg", color: "#F34F29" },
     { name: "Github", logo: "../assets/skills/github.svg", color: "#FFF" },
-    { name: "MongoDB", logo: "../assets/skills/MongoDB.svg", color: "#45A538" },
+    { name: "MongoDB", logo: "../assets/skills/Mongodb.svg", color: "#45A538" },
     { name: "Java", logo: "../assets/skills/Java.svg", color: "#EA2D2E" },
     { name: "Figma", logo: "../assets/skills/Figma.svg", color: "#FF4611" },
     { name: "After Effects", logo: "../assets/skills/ae.svg", color: "#D8A1FF" },
