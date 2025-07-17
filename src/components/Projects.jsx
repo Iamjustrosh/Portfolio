@@ -5,7 +5,7 @@ const ProjectsSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="w-full max-h-screen text-white flex flex-col md:flex-row z-20">
+        <section id="works" className="w-full max-h-screen text-white flex flex-col md:flex-row z-20">
             
             {/* Left Image Preview */}
             <div className="w-full md:w-1/2  hidden md:flex items-center justify-center p-8">

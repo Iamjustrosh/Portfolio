@@ -13,7 +13,6 @@ import css from '../assets/logos/CSS.webp'
 import html from '../assets/logos/HTML.webp'
 import figma from '../assets/logos/FIGMA.webp'
 import SkillsCard from '../components/SkillsCard'
-import ProjectCard from '../components/ProjectCard'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 
@@ -77,7 +76,10 @@ const Home = () => {
         {/* TODO: 
             Contact Section ✅
             Add Skills ✅
-            Fix navbar on mobile screen
+            - scrolltrigger, lenis, locomotive, wordpress
+            Fix navbar on mobile screen ✅
+            Add Socials in navbar in mobile ✅
+            convert png to webp
             Loading animation 
             Add Animations 
               Images on projects
@@ -86,7 +88,6 @@ const Home = () => {
               marquee 
               scale and bg fill
             Optimise & responsive 
-            Add Socials in navbar in mobile
             Work page design and categories ❌
             adding lenis or locomotive
 

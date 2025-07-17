@@ -41,7 +41,7 @@ const Contact = () => {
             );
     };
     return (
-        <section className='w-full py-16 px-8 relative'>
+        <section id="contact" className='w-full py-16 px-8 relative'>
             <div className='mx-auto max-w-7xl'>
                 <h2 className="my-4 text-4xl font-bold text-white md:my-8 md:text-7xl ">
                     Contact <span className='text-[#D96704]'>Me</span>

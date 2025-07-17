@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import logo from '../assets/logos/Emoti.webp'
+import resume from '../assets/Resume.pdf'
 import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import 'remixicon/fonts/remixicon.css'
@@ -16,12 +17,12 @@ const style = {
     backgroundClip: 'padding-box, border-box',
     border: '1px solid transparent',
 
-  }
+}
 
 const navLinks = [
-    { href: "#home", label: "Home", },
+    // { href: "#home", label: "Home", },
     { href: "#works", label: "Works", },
-    { href: "#about", label: "About", },
+    { href: "#skills", label: "Skills", },
     { href: "#contact", label: "Contact", },
 ];
 
@@ -33,6 +34,7 @@ const Navbar = () => {
 
     useEffect(() => {
         if (menuOpen) {
+            document.body.style.overflow = 'hidden';
             gsap.to(mobileMenuRef.current, {
                 opacity: 1,
                 pointerEvents: "auto",
@@ -45,13 +47,14 @@ const Navbar = () => {
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 0.4,
+                    duration: 1,
                     stagger: 0.07,
-                    delay: 0.1,
+                    delay: 0.3,
                     ease: "power4.out"
                 }
             );
         } else {
+            document.body.style.overflow = '';
             gsap.to(mobileMenuRef.current, {
                 opacity: 0,
                 pointerEvents: "none",
@@ -59,6 +62,10 @@ const Navbar = () => {
                 ease: "power2.in"
             });
         }
+        // Clean up in case the component unmounts while menu is open
+        return () => {
+            document.body.style.overflow = '';
+        };
     }, [menuOpen]);
 
     return (
@@ -110,6 +117,39 @@ const Navbar = () => {
                         <span>{link.label}</span>
                     </a>
                 ))}
+
+                {/* Social Icons */}
+                <div
+                    className="flex gap-6 mt-8"
+                    style={{ opacity: 0, transform: 'translateY(40px)' }}
+                    ref={el => menuLinksRef.current[navLinks.length + 1] = el}
+                >
+                    <a href="https://www.instagram.com/am_crusher.hatake/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-orange-500 transition">
+                        <i className="ri-instagram-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/roshanjain7422/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-orange-500 transition">
+                        <i className="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="https://github.com/Iamjustrosh/" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-orange-500 transition">
+                        <i className="ri-github-fill"></i>
+                    </a>
+                    <a href="https://x.com/Iamjustrosh" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-orange-500 transition">
+                        <i className="ri-twitter-fill"></i>
+                    </a>
+                </div>
+
+                {/* Download Resume CTA */}
+                <a
+                    href={resume}
+                    download
+                    className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-full font-semibold text-lg shadow-lg hover:bg-orange-600 transition"
+                    onClick={() => setMenuOpen(false)}
+                    style={{ opacity: 0, transform: 'translateY(40px)' }}
+                    ref={el => menuLinksRef.current[navLinks.length] = el}
+                >
+                    Download Resume
+                </a>
+
             </div>
         </nav>
     )

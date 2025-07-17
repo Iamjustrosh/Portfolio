@@ -63,7 +63,7 @@ const Skills = () => {
   const secondRow = SKILLS.slice(midPoint);
 
   return (
-    <section className="w-full py-16 px-8 relative">
+    <section id="skills" className="w-full py-16 px-8 relative">
 
       <div className="absolute left-0 z-0 top-[800px]">
       <img src={redEllipse} alt="" />
