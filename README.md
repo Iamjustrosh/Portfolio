@@ -31,11 +31,10 @@ A clean, modern, and responsive personal portfolio website built using **React**
 ---
 
 
-🔗 Live Demo
-🌍 [Visit Portfolio] (https://roshanjain-portfolio.vercel.app/)
+🔗 Live Demo [Visit Portfolio](https://roshanjain-portfolio.vercel.app/)
 
 📬 Contact
 Roshan Jain
 📧 roshanjain7422@gmail.com 
-🔗 [LinkedIn]() • [Instagram]()
+🔗 [LinkedIn](https://www.linkedin.com/in/roshanjain7422/) • [Instagram](https://www.instagram.com/am_crusher.hatake/)
 

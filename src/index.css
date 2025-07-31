@@ -147,6 +147,20 @@
   }
 }
 
+@keyframes revealHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.reveal-image {
+  animation: revealHeight 0.5s cubic-bezier(0.4,0,0.2,1);
+  transform-origin: bottom;
+}
+
 
 .animate-scroll-left {
   animation: scroll-left 30s linear infinite;

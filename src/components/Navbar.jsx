@@ -7,21 +7,10 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 
-const style = {
-    backgroundImage: `
-      linear-gradient(#111,#111), 
-      linear-gradient(to top right, rgba(217, 103, 4, 0) 0%, rgba(217, 103, 4, 1) 100%)
-    `,
-    backgroundOrigin: 'padding-box, border-box',
-    backgroundClip: 'padding-box, border-box',
-    border: '1px solid transparent',
-
-  }
 
 const navLinks = [
-    { href: "#home", label: "Home", },
     { href: "#works", label: "Works", },
-    { href: "#about", label: "About", },
+    { href: "#skills", label: "Skills", },
     { href: "#contact", label: "Contact", },
 ];
 
@@ -33,6 +22,7 @@ const Navbar = () => {
 
     useEffect(() => {
         if (menuOpen) {
+            document.body.style.overflow = 'hidden';
             gsap.to(mobileMenuRef.current, {
                 opacity: 1,
                 pointerEvents: "auto",
@@ -52,6 +42,7 @@ const Navbar = () => {
                 }
             );
         } else {
+            document.body.style.overflow = '';
             gsap.to(mobileMenuRef.current, {
                 opacity: 0,
                 pointerEvents: "none",
@@ -59,33 +50,22 @@ const Navbar = () => {
                 ease: "power2.in"
             });
         }
+        // Clean up in case the component unmounts while menu is open
+        return () => {
+            document.body.style.overflow = '';
+        };
     }, [menuOpen]);
 
     return (
-        <nav className="p-4 py-10 flex justify-between md:justify-center items-center relative bg-transparent z-50">
+        <nav className="p-4 py-10 flex justify-between items-center relative bg-transparent z-50">
 
-            <div className="flex items-center md:absolute md:left-6 z-20">
+            <div className="flex items-center relative md:left-6 z-20">
                 <img src={logo} className="" alt="logo" />
             </div>
 
 
-            <div className="hidden md:flex justify-center items-center rounded-full" style={style}>
-                <div className="flex gap-10 px-10 text-xl font-[roboto] py-2 rounded-full" >
-                    {navLinks.map(link => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="flex items-center gap-2 text-white"
-                        >
-                            <span>{link.label}</span>
-                        </a>
-                    ))}
-                </div>
-            </div>
-
-
             <button
-                className="md:hidden  z-20 text-white text-3xl focus:outline-none"
+                className="z-20 text-white text-3xl focus:outline-none relative right-6"
                 onClick={() => setMenuOpen(!menuOpen)}
                 aria-label="Toggle menu"
             >
@@ -96,20 +76,56 @@ const Navbar = () => {
             <div
                 ref={mobileMenuRef}
                 style={{ opacity: 0, pointerEvents: "none" }}
-                className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex flex-col items-center justify-center gap-8 z-10 md:hidden"
+                className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex flex-col items-start justify-center px-14 gap-8 z-10 "
             >
                 {navLinks.map((link, idx) => (
                     <a
                         key={link.href}
                         href={link.href}
                         ref={el => menuLinksRef.current[idx] = el}
-                        className="flex items-center gap-3 text-2xl text-white"
+                        className="flex items-center gap-3 text-5xl text-white hover:text-orange-500 transition"
                         onClick={() => setMenuOpen(false)}
                         style={{ opacity: 0, transform: 'translateY(40px)' }}
                     >
                         <span>{link.label}</span>
                     </a>
                 ))}
+
+
+                {/* Social Icons */}
+                <div
+                    className="flex gap-6 mt-8"
+                    style={{ opacity: 0, transform: 'translateY(40px)' }}
+                    ref={el => menuLinksRef.current[navLinks.length + 1] = el}
+                >
+                    <a href="https://www.instagram.com/am_crusher.hatake/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                        <i className="ri-instagram-fill"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/roshanjain7422/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                        <i className="ri-linkedin-fill"></i>
+                    </a>
+                    <a href="https://github.com/Iamjustrosh/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                        <i className="ri-github-fill"></i>
+                    </a>
+                    <a href="https://x.com/Iamjustrosh" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                        <i className="ri-twitter-fill"></i>
+                    </a>
+                    <a href="https://www.behance.net/roshanjain12" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                        <i className="ri-behance-fill"></i>
+                    </a>
+                </div>
+
+                {/* Download Resume CTA */}
+                <a
+                    href="/assets/Resume.pdf"
+                    download
+                    className="mt-4 px-6 py-2 bg-orange-500 text-white rounded-full font-semibold text-lg shadow-lg hover:bg-orange-600 transition"
+                    onClick={() => setMenuOpen(false)}
+                    style={{ opacity: 0, transform: 'translateY(40px)' }}
+                    ref={el => menuLinksRef.current[navLinks.length] = el}
+                >
+                    Download Resume
+                </a>
             </div>
         </nav>
     )

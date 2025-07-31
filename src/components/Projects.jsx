@@ -5,15 +5,19 @@ const ProjectsSection = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
-        <section className="w-full max-h-screen text-white flex flex-col md:flex-row z-20">
+        <section id="works" className="w-full max-h-screen text-white flex flex-col md:flex-row z-20">
             
             {/* Left Image Preview */}
-            <div className="w-full md:w-1/2  hidden md:flex items-center justify-center p-8">
-                <img
-                    src={PROJECTS[activeIndex].image}
-                    alt={PROJECTS[activeIndex].title}
-                    className="max-w-full max-h-[60vh] object-contain transition-all duration-500"
-                />
+            <div className="w-full md:w-1/2 hidden md:flex items-center justify-center p-8">
+                <div className="relative w-full h-[60vh] flex items-end overflow-hidden">
+                    <img
+                        key={activeIndex}
+                        src={PROJECTS[activeIndex].image}
+                        alt={PROJECTS[activeIndex].title}
+                        className={`max-w-full max-h-[60vh] object-contain transition-all duration-500 origin-bottom reveal-image`}
+                        style={{ height: '100%', transition: 'height 0.5s', animation: 'revealHeight 0.5s cubic-bezier(0.4,0,0.2,1)' }}
+                    />
+                </div>
             </div>
 
             {/* Right Project List */}

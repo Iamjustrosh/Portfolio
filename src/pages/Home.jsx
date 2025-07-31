@@ -77,16 +77,16 @@ const Home = () => {
         {/* TODO: 
             Contact Section ✅
             Add Skills ✅
-            Fix navbar on mobile screen
+            Fix navbar on mobile screen ✅
             Loading animation 
             Add Animations 
-              Images on projects
-              Navbar hover
+              Images on projects ✅
+              Navbar hover ✅
               parallax hero section
-              marquee 
-              scale and bg fill
+              marquee ✅
+              scale and bg fill ✅
             Optimise & responsive 
-            Add Socials in navbar in mobile
+            Add Socials in navbar in mobile ✅
             Work page design and categories ❌
             adding lenis or locomotive
 
