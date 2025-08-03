@@ -57,10 +57,12 @@ const Navbar = () => {
     }, [menuOpen]);
 
     return (
-        <nav className="p-4 py-10 flex justify-between items-center relative bg-transparent z-50">
+        <nav className="px-4 flex justify-between items-center relative bg-transparent z-50">
 
             <div className="flex items-center relative md:left-6 z-20">
-                <img src={logo} className="" alt="logo" />
+                <a href="/">
+                    <img src={logo} className="" alt="logo" loading="lazy"/>
+                </a>
             </div>
 
 

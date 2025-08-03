@@ -169,3 +169,8 @@
 .animate-scroll-right {
   animation: scroll-right 30s linear infinite;
 }
+
+body{
+  background: #111;
+  color: #fff;
+}

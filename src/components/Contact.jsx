@@ -50,11 +50,13 @@ const Contact = () => {
                     src={Ellipse}
                     alt=""
                     className="absolute left-0 bottom-0 z-0 pointer-events-none"
+                    loading="lazy"
                 />
                 <img
                     src={BEllipse}
                     alt=""
                     className="absolute right-0 bottom-0 z-0 pointer-events-none"
+                    loading="lazy"
                 />
 
                 <div className="contact ">

@@ -66,10 +66,10 @@ const Skills = () => {
     <section id="skills" className="w-full py-16 px-8 relative">
 
       <div className="absolute left-0 z-0 top-[800px]">
-      <img src={redEllipse} alt="" />
+      <img src={redEllipse} loading="lazy" alt="" />
       </div>
       <div className="absolute right-0 z-0 top-[400px]">
-      <img src={blueEllipse} alt="" />
+      <img src={blueEllipse} loading="lazy" alt="" />
       </div>
       <div className="mx-auto max-w-7xl z-20 ">
         <h2 className="my-4 text-4xl font-bold text-white md:my-8 md:text-7xl ">
