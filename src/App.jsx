@@ -10,7 +10,14 @@ import { useEffect, useState } from 'react'
 
 function App() {
   // Initialize Lenis
-  const lenis = new Lenis();
+  const lenis = new Lenis({
+    lerp: 0.1,
+    smooth: true,
+    smoothTouch: true, // enables smooth scroll even for touch devices
+    gestureOrientation: 'vertical',
+    touchMultiplier: 1.5, // feel free to tweak
+    duration: 1.2, // adjust if scroll feels too fast or too slow
+  });
 
   // Use requestAnimationFrame to continuously update the scroll
   function raf(time) {
@@ -26,10 +33,10 @@ function App() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setFadeOut(true) 
+      setFadeOut(true)
       setTimeout(() => {
-        setLoading(false) 
-      }, 1000) 
+        setLoading(false)
+      }, 1000)
     }, 2000)
 
     return () => clearTimeout(timer)
