@@ -100,10 +100,10 @@ const Navbar = () => {
                     style={{ opacity: 0, transform: 'translateY(40px)' }}
                     ref={el => menuLinksRef.current[navLinks.length + 1] = el}
                 >
-                    <a href="https://www.instagram.com/am_crusher.hatake/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                    <a href="https://www.instagram.com/iamjustrosh/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
                         <i className="ri-instagram-fill"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/roshanjain7422/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                    <a href="https://www.linkedin.com/in/iamjustrosh/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
                         <i className="ri-linkedin-fill"></i>
                     </a>
                     <a href="https://github.com/Iamjustrosh/" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
