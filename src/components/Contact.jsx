@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import astro from '../assets/logos/astro.webp'
 import Ellipse from '../assets/logos/Ellipse 6.webp'
 import BEllipse from '../assets/logos/Ellipse 4.webp'
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
