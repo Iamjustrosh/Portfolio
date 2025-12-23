@@ -46,7 +46,7 @@ const Contact = () => {
                 <h2 className="my-4 text-4xl font-bold text-white md:my-8 md:text-7xl ">
                     Contact <span className='text-[#D96704]'>Me</span>
                 </h2>
-                <img
+                {/* <img
                     src={Ellipse}
                     alt=""
                     className="absolute left-0 bottom-0 z-0 pointer-events-none"
@@ -57,7 +57,7 @@ const Contact = () => {
                     alt=""
                     className="absolute right-0 bottom-0 z-0 pointer-events-none"
                     loading="lazy"
-                />
+                /> */}
 
                 <div className="contact ">
                     <Card className="bg-[#545454]/30 text-white max-w-xl md:max-w-3xl mx-auto p-6 md:p-10 rounded-2xl shadow-lg border-none">

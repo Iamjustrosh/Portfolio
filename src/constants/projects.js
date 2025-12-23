@@ -18,7 +18,7 @@ export const PROJECTS = [
       title: "Employee Mangament System",
       type: "EMS System — Website",
       image: "../assets/projects/ems.webp",
-      link: "https://roshanjain-45.github.io/EMS/",
+      link: "https://iamjustrosh.github.io/EMS/",
     },
     {
       id: "04",

@@ -34,8 +34,8 @@ const SkillCard = ({ skill }) => (
 const SkillRow = ({ skills, direction }) => (
   <div className="relative mb-4 md:mb-6">
     {/* Fade overlays */}
-    <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-12 bg-gradient-to-r from-[#111] via-[#111]/80 to-transparent md:w-16" />
-    <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-12 bg-gradient-to-l from-[#111] via-[#111]/80 to-transparent md:w-16" />
+    {/* <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-12 bg-gradient-to-r from-[#111] via-[#111]/80 to-transparent md:w-16" />
+    <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-12 bg-gradient-to-l from-[#111] via-[#111]/80 to-transparent md:w-16" /> */}
 
     {/* Scrollable container */}
     <div className="scrollbar-hide overflow-x-hidden">
@@ -65,12 +65,12 @@ const Skills = () => {
   return (
     <section id="skills" className="w-full py-16 px-8 relative">
 
-      <div className="absolute left-0 z-0 top-[800px]">
+      {/* <div className="absolute left-0 z-0 top-[800px]">
       <img src={redEllipse} loading="lazy" alt="" />
       </div>
       <div className="absolute right-0 z-0 top-[400px]">
       <img src={blueEllipse} loading="lazy" alt="" />
-      </div>
+      </div> */}
       <div className="mx-auto max-w-7xl z-20 ">
         <h2 className="my-4 text-4xl font-bold text-white md:my-8 md:text-7xl ">
           My <span className='text-[#D96704]'>Skills</span>
