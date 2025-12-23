@@ -4,7 +4,7 @@ const positions = {
   left: "bottom-10 left-0 -translate-x-1/3",
 };
 
-const SpotlightGlow = ({ position = "right", color }) => {
+const Spotlightglow = ({ position = "right", color }) => {
   return (
     <motion.div
       className={`
@@ -30,4 +30,4 @@ const SpotlightGlow = ({ position = "right", color }) => {
   );
 };
 
-export default SpotlightGlow;
+export default Spotlightglow;

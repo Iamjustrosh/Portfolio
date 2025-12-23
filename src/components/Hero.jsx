@@ -1,5 +1,5 @@
 import AnimatedWords from "./AnimatedWords";
-import SpotlightGlow from "./SpotlightGlow";
+import Spotlightglow from "./Spotlightglow";
 import ScrollingText from "./ScrollingText";
 import FloatingIconsScene from "./FloatingIconsScene";
 import { motion } from "motion/react";
@@ -16,8 +16,8 @@ const Hero = () => {
       <ScrollingText />
 
       {/* Background glows */}
-      <SpotlightGlow position="right" color="bg-[#643F99]" />
-      <SpotlightGlow position="left" color="bg-[#FC7502]" />
+      <Spotlightglow position="right" color="bg-[#643F99]" />
+      <Spotlightglow position="left" color="bg-[#FC7502]" />
 
       {/* Foreground content */}
       <div className="relative z-10 flex min-h-[80vh] items-center justify-center">
