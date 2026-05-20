@@ -59,25 +59,22 @@ const Home = () => {
     <>
       <div className="home-page min-h-screen flex flex-col">
 
-
-
-          {/* Glow */}
-          {/* <SpotlightGlow position="right" color="bg-orange-600" />
+        {/* Glow */}
+        {/* <SpotlightGlow position="right" color="bg-orange-600" />
           <SpotlightGlow position="left" color="bg-purple-500" /> */}
-
-          <Hero />
-          {/* Content */}
-          {/* <main className="relative z-10 flex min-h-screen items-center justify-center">
+        {/* Content */}
+        {/* <main className="relative z-10 flex min-h-screen items-center justify-center">
             <h1 className="text-4xl font-bold text-white">
             </h1>
           </main> */}
-
-
         {/* Marquee */}
         {/* <div className="w-full z-40">
           <Marquee />
         </div> */}
 
+
+
+        <Hero />
 
         {/* Skills */}
         <SkillsCard />
