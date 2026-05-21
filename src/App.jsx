@@ -1,47 +1,67 @@
 import { Routes, Route } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import Lenis from 'lenis'
+
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Preloader from './components/Preloader'
+import ScrollToTop from './components/ScrollToTop'
+
 import Home from './pages/Home'
 import Work from './pages/Work'
 import NotFound from './pages/NotFound'
-import Lenis from 'lenis'
-import Preloader from './components/Preloader'
-import { useEffect, useState } from 'react'
+
+import { setLenis } from './lib/lenis'
 
 function App() {
-  // Initialize Lenis
-  const lenis = new Lenis({
-    lerp: 0.1,
-    smooth: true,
-    smoothTouch: true, // enables smooth scroll even for touch devices
-    gestureOrientation: 'vertical',
-    touchMultiplier: 1.5, // feel free to tweak
-    duration: 1.2, // adjust if scroll feels too fast or too slow
-  });
 
-  // Use requestAnimationFrame to continuously update the scroll
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
-
-  //prelaoder
   const [loading, setLoading] = useState(true)
   const [fadeOut, setFadeOut] = useState(false)
 
+  // Preloader
   useEffect(() => {
     const timer = setTimeout(() => {
+
       setFadeOut(true)
+
       setTimeout(() => {
         setLoading(false)
       }, 1000)
+
     }, 2000)
 
     return () => clearTimeout(timer)
   }, [])
 
+  // Lenis
+  useEffect(() => {
+
+    if (loading) return
+
+    const lenis = new Lenis({
+      lerp: 0.1,
+      smoothWheel: true,
+      smoothTouch: true,
+      duration: 1.2,
+    })
+
+    setLenis(lenis)
+
+    let rafId
+
+    const raf = (time) => {
+      lenis.raf(time)
+      rafId = requestAnimationFrame(raf)
+    }
+
+    rafId = requestAnimationFrame(raf)
+
+    return () => {
+      cancelAnimationFrame(rafId)
+      lenis.destroy()
+    }
+
+  }, [loading])
 
   return (
     <>
@@ -49,7 +69,11 @@ function App() {
         <Preloader fadeOut={fadeOut} />
       ) : (
         <div className="min-h-screen flex flex-col bg-[#111] text-white overflow-hidden fade-in">
+
+          <ScrollToTop />
+
           <Navbar />
+
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<Home />} />
@@ -57,10 +81,11 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+
           <Footer />
+
         </div>
       )}
-
     </>
   )
 }

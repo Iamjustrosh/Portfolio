@@ -13,6 +13,9 @@ import css from '../assets/logos/CSS.webp'
 import html from '../assets/logos/HTML.webp'
 import figma from '../assets/logos/FIGMA.webp'
 import SkillsCard from '../components/SkillsCard'
+import FeaturedProjects from '../components/FeaturedProjects'
+import ExperienceSection from '../components/Experience'
+
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
 import { useEffect } from "react";
@@ -58,34 +61,21 @@ const Home = () => {
   return (
     <>
       <div className="home-page min-h-screen flex flex-col">
-
-        {/* Glow */}
-        {/* <SpotlightGlow position="right" color="bg-orange-600" />
-          <SpotlightGlow position="left" color="bg-purple-500" /> */}
-        {/* Content */}
-        {/* <main className="relative z-10 flex min-h-screen items-center justify-center">
-            <h1 className="text-4xl font-bold text-white">
-            </h1>
-          </main> */}
-        {/* Marquee */}
-        {/* <div className="w-full z-40">
-          <Marquee />
-        </div> */}
-
-
-
         <Hero />
 
         {/* Skills */}
         <SkillsCard />
 
-        {/* Projects */}
-        <Projects />
+        {/* Experience */}
+        <ExperienceSection />
+
+        {/* Featured Projects */}
+        <FeaturedProjects />
+
         {/* Contact */}
         <Contact />
-
-
       </div>
+
     </>
   )
 }

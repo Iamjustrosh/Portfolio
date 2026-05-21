@@ -1,15 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react'
 import logo from '../assets/logos/Emoti.webp'
-import { NavLink } from 'react-router-dom'
+import { href, NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import 'remixicon/fonts/remixicon.css'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { label } from 'motion/react-client'
 
 
 
 const navLinks = [
-    { href: "#works", label: "Works", },
+    {href: "/", label: "Home"},
+    { href: "work", label: "Works", },
     { href: "#skills", label: "Skills", },
     { href: "#contact", label: "Contact", },
 ];
