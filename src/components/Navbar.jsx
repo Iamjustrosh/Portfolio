@@ -11,7 +11,7 @@ import { label } from 'motion/react-client'
 
 const navLinks = [
     {href: "/", label: "Home"},
-    { href: "work", label: "Works", },
+    { href: "/work", label: "Works", },
     { href: "#skills", label: "Skills", },
     { href: "#contact", label: "Contact", },
 ];
