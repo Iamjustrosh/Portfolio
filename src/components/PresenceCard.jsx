@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 
-// ─── Language badge config ────────────────────────────────────
 const LANGUAGE_BADGES = {
   typescript:      { label: 'TS',   bg: 'bg-blue-900/60',   text: 'text-blue-300'   },
   typescriptreact: { label: 'TSX',  bg: 'bg-blue-900/60',   text: 'text-blue-300'   },
@@ -58,24 +57,22 @@ function formatLastActive(idleSince) {
   });
 }
 
-// ─── Row ──────────────────────────────────────────────────────
 function Row({ icon: Icon, iconColor, label, children }) {
   return (
-    <div className="flex items-center gap-3 py-2.5 border-b border-white/[0.04] last:border-0">
-      <div className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center shrink-0">
-        <Icon size={15} className={iconColor} />
+    <div className="flex items-center gap-2 sm:gap-3 py-2 sm:py-2.5 border-b border-white/[0.04] last:border-0">
+      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/[0.04] flex items-center justify-center shrink-0">
+        <Icon size={13} className={iconColor} />
       </div>
-      <span className="text-[11px] text-gray-500 w-20 shrink-0">
+      <span className="text-[10px] sm:text-[11px] text-gray-500 w-16 sm:w-20 shrink-0">
         {label}
       </span>
-      <span className="text-[13px] text-slate-200 font-medium flex items-center gap-2 flex-1 min-w-0">
+      <span className="text-[12px] sm:text-[13px] text-slate-200 font-medium flex items-center gap-1.5 sm:gap-2 flex-1 min-w-0">
         {children}
       </span>
     </div>
   );
 }
 
-// ─── Card ─────────────────────────────────────────────────────
 export function PresenceCard({ presence, onClose }) {
   const { status } = presence;
   const badge = getLanguageBadge(presence.language);
@@ -86,7 +83,17 @@ export function PresenceCard({ presence, onClose }) {
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: 8, scale: 0.97 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className="w-[360px] rounded-[18px] border border-white/[0.08] p-5"
+      // ─── Key responsive change ───────────────────────────────
+      // On mobile: stretch to fill available width minus the widget's
+      // right-6 offset and a matching left margin so it doesn't touch edges.
+      // On sm and up: fixed 360px width, anchored to the right.
+      className="
+        w-[calc(100vw-3rem)]
+        sm:w-[360px]
+        rounded-[18px]
+        border border-white/[0.08]
+        p-4 sm:p-5
+      "
       style={{
         backgroundColor: 'rgba(13, 17, 23, 0.88)',
         backdropFilter: 'blur(24px)',
@@ -102,7 +109,9 @@ export function PresenceCard({ presence, onClose }) {
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-2.5">
               <StatusIndicator status="online" size="lg" />
-              <span className="text-[17px] font-semibold text-white">Online</span>
+              <span className="text-[15px] sm:text-[17px] font-semibold text-white">
+                Online
+              </span>
             </div>
             {onClose && (
               <button
@@ -125,14 +134,16 @@ export function PresenceCard({ presence, onClose }) {
           </Row>
 
           <Row icon={FileCode} iconColor="text-blue-400" label="Working on">
-            <span className="truncate">{presence.file}</span>
+            <span className="truncate max-w-[80px] sm:max-w-none">
+              {presence.file}
+            </span>
             {presence.language && (
               <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-md shrink-0 ${badge.bg} ${badge.text}`}>
                 {badge.label}
               </span>
             )}
             {presence.cursorLine && (
-              <span className="text-gray-600 text-[12px] ml-auto shrink-0">
+              <span className="text-gray-600 text-[11px] sm:text-[12px] ml-auto shrink-0">
                 {presence.cursorLine}:{presence.cursorColumn}
               </span>
             )}
@@ -157,12 +168,14 @@ export function PresenceCard({ presence, onClose }) {
         <>
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
-                <Timer size={20} className="text-amber-400" />
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center shrink-0">
+                <Timer size={18} className="text-amber-400" />
               </div>
               <div>
-                <div className="text-[17px] font-semibold text-white">Away</div>
-                <div className="text-[13px] text-amber-400 mt-0.5">
+                <div className="text-[15px] sm:text-[17px] font-semibold text-white">
+                  Away
+                </div>
+                <div className="text-[12px] sm:text-[13px] text-amber-400 mt-0.5">
                   Idle for {formatIdleDuration(presence.idleSince)}
                 </div>
               </div>
@@ -180,11 +193,13 @@ export function PresenceCard({ presence, onClose }) {
           <div className="h-px bg-white/[0.06] my-3" />
 
           <div className="flex items-center gap-3 py-2">
-            <div className="w-8 h-8 rounded-lg bg-white/[0.04] flex items-center justify-center">
-              <Activity size={15} className="text-gray-500" />
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white/[0.04] flex items-center justify-center">
+              <Activity size={13} className="text-gray-500" />
             </div>
-            <span className="text-[12px] text-gray-500">Last active</span>
-            <span className="text-[13px] text-slate-300 font-medium ml-1">
+            <span className="text-[11px] sm:text-[12px] text-gray-500">
+              Last active
+            </span>
+            <span className="text-[12px] sm:text-[13px] text-slate-300 font-medium ml-1">
               {formatLastActive(presence.idleSince)}
             </span>
           </div>
@@ -197,7 +212,9 @@ export function PresenceCard({ presence, onClose }) {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <StatusIndicator status="offline" size="lg" />
-              <span className="text-[17px] font-semibold text-white">Offline</span>
+              <span className="text-[15px] sm:text-[17px] font-semibold text-white">
+                Offline
+              </span>
             </div>
             {onClose && (
               <button
@@ -209,7 +226,9 @@ export function PresenceCard({ presence, onClose }) {
             )}
           </div>
           <div className="h-px bg-white/[0.06] my-3" />
-          <p className="text-[13px] text-gray-500">Not currently coding</p>
+          <p className="text-[12px] sm:text-[13px] text-gray-500">
+            Not currently coding
+          </p>
         </>
       )}
 

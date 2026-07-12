@@ -55,7 +55,7 @@ const Hero = () => {
               text-muted-foreground
             "
           >
-            a passionate developer who blends creativity with code. From building
+            who blends creativity with code. From building
             responsive websites to exploring virtual worlds and anime, I bring energy and precision
             to everything I create.
           </motion.p>
