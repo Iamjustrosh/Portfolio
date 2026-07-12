@@ -12,6 +12,7 @@ import Work from './pages/Work'
 import NotFound from './pages/NotFound'
 
 import { setLenis } from './lib/lenis'
+import { PresenceWidget } from './components/PresenceWidget'
 
 function App() {
 
@@ -83,6 +84,7 @@ function App() {
           </main>
 
           <Footer />
+          <PresenceWidget />
 
         </div>
       )}
