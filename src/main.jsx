@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
+import {Clarity} from '@microsoft/clarity'
+
+
+
+Clarity.init(import.meta.env.VITE_PROJECT_ID);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
