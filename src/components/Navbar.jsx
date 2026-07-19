@@ -117,6 +117,9 @@ const Navbar = () => {
                     <a href="https://www.behance.net/roshanjain12" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
                         <i className="ri-behance-fill"></i>
                     </a>
+                    <a href="https://discord.gg/yU5br5Mw6H" target="_blank" rel="noopener noreferrer" className="text-4xl text-white hover:text-orange-500 transition">
+                        <i className="ri-discord-fill"></i>
+                    </a>
                 </div>
 
                 {/* Download Resume CTA */}
