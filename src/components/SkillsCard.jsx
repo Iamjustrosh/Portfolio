@@ -75,7 +75,7 @@ const Skills = () => {
         <h2 className="my-4 text-4xl font-bold text-white md:my-8 md:text-7xl ">
           My <span className='text-[#D96704]'>Skills</span>
         </h2>
-        <div className="space-y-4 md:space-y-6">
+        <div className="space-y-4 md:space-y-6 mask-r-from-70%  mask-l-from-70%">
           <SkillRow skills={firstRow} direction="left" />
           <SkillRow skills={secondRow} direction="right" />
         </div>
