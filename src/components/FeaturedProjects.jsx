@@ -135,7 +135,7 @@ const FeaturedProjects = () => {
       <div ref={btnRef} className="flex justify-center items-center py-16 px-8">
         <div className="flex flex-col items-center gap-4">
           <p className="text-white/40 text-sm font-mono tracking-widest uppercase">
-            {FEATURED_PROJECTS.length} of {/* total */ 8} projects shown
+            {FEATURED_PROJECTS.length} of {/* total */ 9} projects shown
           </p>
           <button
             onClick={() => navigate("/work")}
