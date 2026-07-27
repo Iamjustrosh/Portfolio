@@ -1,29 +1,39 @@
-import cc from '../assets/projects/cc.png'
-import pp from '../assets/projects/pp.png'
-import ems from '../assets/projects/ems.png'
-import tlr from '../assets/projects/tlr.png'
-import ford from '../assets/projects/ford.png'
-import zappos from '../assets/projects/zappos.png'
-import collaboard from '../assets/projects/cb.png' 
-import timer from '../assets/projects/timer.png'
+import cc from '/assets/projects/cc.webp'
+import pp from '/assets/projects/pp.webp'
+import ems from '/assets/projects/ems.webp'
+import tlr from '/assets/projects/tlr.webp'
+import ford from '/assets/projects/ford.webp'
+import zappos from '/assets/projects/zappos.webp'
+import collaboard from '/assets/projects/cb.webp' 
+import timer from '/assets/projects/timer.webp'
+import devp from '/assets/projects/devp.webp'
 
 export const PROJECTS = [
   {
     id: "01",
-    title: "Collaboard",
-    type: "Collaboration Tool — Desktop App",
-    description: "A real-time collaborative whiteboard for teams to brainstorm, plan, and build together.",
+    title: "Developer Presence",
+    type: "VS Code Extension + Portfolio Widget",
+    description:
+      "A real-time developer presence system that displays live VS Code activity as an interactive portfolio widget.",
     fullDescription:
-      "Collaboard is a real-time collaborative whiteboard platform built for modern teams. It supports simultaneous multi-user drawing, sticky notes, shape tools, and live cursors — making remote brainstorming sessions as fluid as in-person ones. Engineered for low latency and high reliability.",
-    image: collaboard, // Replace with: import collaboard from '../assets/projects/collaboard.webp'
-    techStack: ["Electron", "React", "Supabase ", "Monaco Editor", "tldraw API", "PeerJS ", "Tailwind CSS", "Framer Motion + GSAP"],
-    github: "https://github.com/iamjustrosh/Major-Project",
-    live: "https://collabboard-web.vercel.app/",
+      "Developer Presence is a three-part system that bridges Visual Studio Code and a personal portfolio website to showcase live coding activity in real time. The project consists of a custom VS Code extension that captures editor events, a Supabase backend with Realtime synchronization, and a React-powered glassmorphic widget embedded into the portfolio. It displays the currently active project, programming language, coding duration, workspace status, and live activity with minimal latency. Built primarily with AI-assisted development (Claude + Google AI), the project demonstrates modern event-driven architecture, real-time data synchronization, and seamless integration between desktop tooling and the web.",
+    image: devp, // import developerPresence from "../assets/projects/developer-presence.webp"
+    techStack: [
+      "TypeScript",
+      "VS Code Extension API",
+      "React",
+      "Supabase",
+      "PostgreSQL",
+      "Supabase Realtime",
+      "Tailwind CSS",
+      "Vite"
+    ],
+    github: "https://github.com/iamjustrosh/Developer-Presence", // Update if different
+    live: "https://devpresence.iamjustrosh.in",
     featured: true,
-    category: "Desktop App",
+    category: "Developer Tool",
     year: "2026",
   },
-
   {
     id: "02",
     title: "Pranjal Pathshala",
@@ -41,6 +51,21 @@ export const PROJECTS = [
   },
   {
     id: "03",
+    title: "Collaboard",
+    type: "Collaboration Tool — Desktop App",
+    description: "A real-time collaborative whiteboard for teams to brainstorm, plan, and build together.",
+    fullDescription:
+      "Collaboard is a real-time collaborative whiteboard platform built for modern teams. It supports simultaneous multi-user drawing, sticky notes, shape tools, and live cursors — making remote brainstorming sessions as fluid as in-person ones. Engineered for low latency and high reliability.",
+    image: collaboard, // Replace with: import collaboard from '../assets/projects/collaboard.webp'
+    techStack: ["Electron", "React", "Supabase ", "Monaco Editor", "tldraw API", "PeerJS ", "Tailwind CSS", "Framer Motion + GSAP"],
+    github: "https://github.com/iamjustrosh/Major-Project",
+    live: "https://cb.iamjustrosh.in",
+    featured: true,
+    category: "Desktop App",
+    year: "2026",
+  },
+  {
+    id: "04",
     title: "Code Chronicles",
     type: "Quiz Platform — Website",
     description: "An interactive quiz platform for developers to test and sharpen their coding knowledge.",
@@ -49,13 +74,13 @@ export const PROJECTS = [
     image: cc,
     techStack: ["React", "Tailwind CSS", "Supabase", "Vite"],
     github: "https://github.com/iamjustrosh/CodeChronicles",
-    live: "https://code-chronicles-mauve.vercel.app/",
+    live: "https://code-chronicles.iamjustrosh.in/",
     featured: true,
     category: "Website",
     year: "2024",
   },
   {
-    id: "04",
+    id: "05",
     title: "Project Timer",
     type: "Productivity Tool — Desktop App",
     description: "A lightweight desktop timer and stopwatch app with transparent glass-like UI.",
@@ -70,7 +95,7 @@ export const PROJECTS = [
     year: "2025",
   },
   {
-    id: "05",
+    id: "06",
     title: "Employee Management System",
     type: "EMS System — Website",
     description: "A role-based employee management system for managing tasks, roles, and records efficiently.",
@@ -85,7 +110,7 @@ export const PROJECTS = [
     year: "2024",
   },
   {
-    id: "06",
+    id: "07",
     title: "The Last Ride",
     type: "Open World Car Racing — Game",
     description: "An open-world car racing game concept with immersive environments and fast-paced gameplay.",
@@ -100,7 +125,7 @@ export const PROJECTS = [
     year: "2025",
   },
   {
-    id: "07",
+    id: "08",
     title: "Reimagined Ford",
     type: "Ford — Website",
     description: "A complete reimagination of Ford's web presence with modern design and smooth interactions.",
@@ -115,7 +140,7 @@ export const PROJECTS = [
     year: "2024",
   },
   {
-    id: "08",
+    id: "09",
     title: "Reimagined Zappos",
     type: "Zappos — Website",
     description: "A bold reimagination of the Zappos e-commerce experience with elevated UI and UX.",
