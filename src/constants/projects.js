@@ -4,13 +4,30 @@ import ems from '/assets/projects/ems.webp'
 import tlr from '/assets/projects/tlr.webp'
 import ford from '/assets/projects/ford.webp'
 import zappos from '/assets/projects/zappos.webp'
-import collaboard from '/assets/projects/cb.webp' 
+import collaboard from '/assets/projects/cb.webp'
 import timer from '/assets/projects/timer.webp'
 import devp from '/assets/projects/devp.webp'
+import doonverse from '/assets/projects/dv.webp'
 
 export const PROJECTS = [
+
   {
     id: "01",
+    title: "Pranjal Pathshala",
+    type: "Coaching Institute — Web App",
+    description: "A professional web app for a coaching institute featuring courses, faculty, and enrollment flows.",
+    fullDescription:
+      "Pranjal Pathshala is a full-featured coaching institute website designed to help students discover courses, view faculty profiles, and get enrolled. The site emphasizes trust, clarity, and conversion — built with performance and mobile-first design in mind.",
+    image: pp,
+    techStack: ["React", "Tailwind CSS", "Vite", "Supabase", "EmailJS"],
+    github: "https://github.com/iamjustrosh/pranjal-pathshala",
+    live: "https://pranjal-pathshala.vercel.app/",
+    featured: true,
+    category: "Web App",
+    year: "2025",
+  },
+  {
+    id: "02",
     title: "Developer Presence",
     type: "VS Code Extension + Portfolio Widget",
     description:
@@ -35,22 +52,34 @@ export const PROJECTS = [
     year: "2026",
   },
   {
-    id: "02",
-    title: "Pranjal Pathshala",
-    type: "Coaching Institute — Web App",
-    description: "A professional web app for a coaching institute featuring courses, faculty, and enrollment flows.",
+    id: "03",
+    title: "DoonVerse",
+    type: "Event Registration + Digital Ticketing Platform",
+    description:
+      "A cinematic event registration website with Supabase-powered bookings and interactive digital movie tickets.",
     fullDescription:
-      "Pranjal Pathshala is a full-featured coaching institute website designed to help students discover courses, view faculty profiles, and get enrolled. The site emphasizes trust, clarity, and conversion — built with performance and mobile-first design in mind.",
-    image: pp,
-    techStack: ["React", "Tailwind CSS", "Vite", "Supabase","EmailJS"],
-    github: "https://github.com/iamjustrosh/pranjal-pathshala",
-    live: "https://pranjal-pathshala.vercel.app/",
+      "DoonVerse is a responsive event registration platform built for a college movie experience at IBS Dehradun. The website combines a cinematic UI with smooth animations, an interactive registration flow, and digital ticket generation. Students can register by submitting their name, contact details, email, and MBA year or semester, after which a unique digital ticket is generated with a premium 3D hover effect. Registration data is stored securely in Supabase, while the frontend uses React, Tailwind CSS, Motion, and Aceternity UI to deliver a polished and immersive experience across desktop and mobile devices. The project also focuses on performance, responsive design, validation, and production-ready deployment.",
+    image: doonverse, // import doonverse from "../assets/projects/doonverse.webp"
+    techStack: [
+      "React",
+      "JavaScript",
+      "Supabase",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Motion",
+      "Aceternity UI",
+      "Lucide React",
+      "Vite",
+      "Vercel"
+    ],
+    github: "https://github.com/Iamjustrosh/DOOMVERSE", // Add GitHub repository URL
+    live: "https://doonverse.iamjustrosh.in/",
     featured: true,
-    category: "Web App",
-    year: "2025",
+    category: "Event Platform",
+    year: "2026",
   },
   {
-    id: "03",
+    id: "04",
     title: "Collaboard",
     type: "Collaboration Tool — Desktop App",
     description: "A real-time collaborative whiteboard for teams to brainstorm, plan, and build together.",
@@ -65,7 +94,7 @@ export const PROJECTS = [
     year: "2026",
   },
   {
-    id: "04",
+    id: "05",
     title: "Code Chronicles",
     type: "Quiz Platform — Website",
     description: "An interactive quiz platform for developers to test and sharpen their coding knowledge.",
@@ -80,7 +109,7 @@ export const PROJECTS = [
     year: "2024",
   },
   {
-    id: "05",
+    id: "06",
     title: "Project Timer",
     type: "Productivity Tool — Desktop App",
     description: "A lightweight desktop timer and stopwatch app with transparent glass-like UI.",
@@ -95,14 +124,14 @@ export const PROJECTS = [
     year: "2025",
   },
   {
-    id: "06",
+    id: "07",
     title: "Employee Management System",
     type: "EMS System — Website",
     description: "A role-based employee management system for managing tasks, roles, and records efficiently.",
     fullDescription:
       "A comprehensive Employee Management System featuring role-based access control, task assignment, and employee record management. Designed for small to medium teams needing a streamlined admin dashboard without complex enterprise overhead.",
     image: ems,
-    techStack: ["HTML", "CSS", "JavaScript","React", "LocalStorage"],
+    techStack: ["HTML", "CSS", "JavaScript", "React", "LocalStorage"],
     github: "https://github.com/iamjustrosh/EMS",
     live: "https://iamjustrosh.github.io/EMS/",
     featured: false,
@@ -110,7 +139,7 @@ export const PROJECTS = [
     year: "2024",
   },
   {
-    id: "07",
+    id: "08",
     title: "The Last Ride",
     type: "Open World Car Racing — Game",
     description: "An open-world car racing game concept with immersive environments and fast-paced gameplay.",
@@ -125,7 +154,7 @@ export const PROJECTS = [
     year: "2025",
   },
   {
-    id: "08",
+    id: "09",
     title: "Reimagined Ford",
     type: "Ford — Website",
     description: "A complete reimagination of Ford's web presence with modern design and smooth interactions.",
@@ -140,7 +169,7 @@ export const PROJECTS = [
     year: "2024",
   },
   {
-    id: "09",
+    id: "10",
     title: "Reimagined Zappos",
     type: "Zappos — Website",
     description: "A bold reimagination of the Zappos e-commerce experience with elevated UI and UX.",

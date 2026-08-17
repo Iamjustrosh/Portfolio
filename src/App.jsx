@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Lenis from 'lenis'
 
@@ -16,11 +16,17 @@ import { PresenceWidget } from './components/PresenceWidget'
 
 function App() {
 
-  const [loading, setLoading] = useState(true)
+  const { pathname } = useLocation()
+  const [loading, setLoading] = useState(() => pathname === '/')
   const [fadeOut, setFadeOut] = useState(false)
 
-  // Preloader
+  // Preloader — only on initial load/reload of the home page (not client-side navigation)
   useEffect(() => {
+    if (pathname !== '/') {
+      setLoading(false)
+      return
+    }
+
     const timer = setTimeout(() => {
 
       setFadeOut(true)

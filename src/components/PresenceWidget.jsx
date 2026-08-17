@@ -57,7 +57,7 @@ export function PresenceWidget() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-2.5"
+      className="fixed bottom-17 right-6 z-[9999] flex flex-col items-end gap-2.5"
       style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
     >
       {/* Card — animated in/out */}

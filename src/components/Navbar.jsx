@@ -62,9 +62,9 @@ const Navbar = () => {
         <nav className="px-4 flex justify-between items-center relative bg-transparent z-50">
 
             <div className="flex items-center relative md:left-6 z-20">
-                <a href="/">
+                <Link to="/">
                     <img src={logo} className="" alt="logo" loading="lazy"/>
-                </a>
+                </Link>
             </div>
 
 
@@ -82,18 +82,36 @@ const Navbar = () => {
                 style={{ opacity: 0, pointerEvents: "none" }}
                 className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex flex-col items-start justify-center px-14 gap-8 z-10 "
             >
-                {navLinks.map((link, idx) => (
-                    <a
-                        key={link.href}
-                        href={link.href}
-                        ref={el => menuLinksRef.current[idx] = el}
-                        className="flex items-center gap-3 text-5xl text-white hover:text-orange-500 transition"
-                        onClick={() => setMenuOpen(false)}
-                        style={{ opacity: 0, transform: 'translateY(40px)' }}
-                    >
-                        <span>{link.label}</span>
-                    </a>
-                ))}
+                {navLinks.map((link, idx) => {
+                    const isRoute = link.href.startsWith('/')
+                    const className = "flex items-center gap-3 text-5xl text-white hover:text-orange-500 transition"
+                    const style = { opacity: 0, transform: 'translateY(40px)' }
+                    const closeMenu = () => setMenuOpen(false)
+
+                    return isRoute ? (
+                        <Link
+                            key={link.href}
+                            to={link.href}
+                            ref={el => menuLinksRef.current[idx] = el}
+                            className={className}
+                            onClick={closeMenu}
+                            style={style}
+                        >
+                            <span>{link.label}</span>
+                        </Link>
+                    ) : (
+                        <a
+                            key={link.href}
+                            href={link.href}
+                            ref={el => menuLinksRef.current[idx] = el}
+                            className={className}
+                            onClick={closeMenu}
+                            style={style}
+                        >
+                            <span>{link.label}</span>
+                        </a>
+                    )
+                })}
 
 
                 {/* Social Icons */}
