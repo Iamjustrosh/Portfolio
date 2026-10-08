@@ -14,6 +14,7 @@ const navLinks = [
     { href: "/work", label: "Works", },
     { href: "#skills", label: "Skills", },
     { href: "#contact", label: "Contact", },
+    { href: "https://cli.iamjustrosh.in", label:"Try CLI"}
 ];
 
 const Navbar = () => {
